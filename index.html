@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHO App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>PHO Work Form</h1>
+
+    <form action="">
+
+        <div id="user-info-section" class="section">
+            <div class="form-container">
+                <h2>User Info</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+
+                <label for="hostel">Hostel no.:</label>
+                <input type="text" id="hostel" name="hostel"><br>
+                <button type="button" class="next-btn" onclick="showSection('peel-waste-section')">Next</button>
+            </div>
+        </div>
+
+        <div id="peel-waste-section" class="section" style="display: none;">
+            <div class="form-container">
+                <h2>Peel Waste</h2>
+                <label for="peel_weight">Weight of Peel Waste (in kg):</label>
+                <input type="number" id="peel_weight" name="peel_weight" min="0" step="0.01" required><br>
+                <label for="peel_image">Image Proof:</label>
+                <input type="file" id="peel_image" name="peel_image" accept="image/*" required><br>
+                <button type="button" class="prev-btn" onclick="showSection('user-info-section')">Previous</button>
+                <button type="button" class="next-btn" onclick="showSection('leftover-waste-section')">Next</button>
+            </div>
+        </div>
+
+        <div id="leftover-waste-section" class="section" style="display: none;">
+            <div class="form-container">
+                <h2>Leftover Waste</h2>
+                <label for="leftover_weight">Weight of Leftover Waste (in kg):</label>
+                <input type="number" id="leftover_weight" name="leftover_weight" min="0" step="0.01" required><br>
+                <label for="leftover_image">Image Proof:</label>
+                <input type="file" id="leftover_image" name="leftover_image" accept="image/*" required><br>
+                <button type="button" class="prev-btn" onclick="showSection('peel-waste-section')">Previous</button>
+                <button type="button" class="next-btn" onclick="showSection('dustbin-waste-section')">Next</button>
+            </div>
+        </div>
+
+        <div id="dustbin-waste-section" class="section" style="display: none;">
+            <div class="form-container">
+                <h2>Dustbin Waste</h2>
+                <label for="dustbin_weight">Weight of Dustbin Waste (in kg):</label>
+                <input type="number" id="dustbin_weight" name="dustbin_weight" min="0" step="0.01" required><br>
+                <label for="dustbin_image">Image Proof:</label>
+                <input type="file" id="dustbin_image" name="dustbin_image" accept="image/*" required><br>
+                <button type="button" class="prev-btn" onclick="showSection('leftover-waste-section')">Previous</button>
+                <input type="submit" value="Submit" class="submit-btn">
+            </div>
+        </div>
+
+    </form>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        showSection('user-info-section');
+    </script>
+
+</body>
+</html>

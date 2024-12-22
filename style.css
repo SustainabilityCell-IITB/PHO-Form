@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0; /* Light background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Ensure full viewport height */
+    margin: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.form-container {
+    background-color: #444444; /* Darker container background */
+    color: #eee; /* Light text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 400px; /* Adjust width as needed */
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #777;
+    background-color: #555;
+    color: #eee;
+    border-radius: 5px;
+}
+
+.next-btn, .prev-btn, .submit-btn {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px; /* Space between buttons */
+}
+.prev-btn{
+    background-color: gray;
+}
+.submit-btn{
+    background-color: green;
+}
+
+.section {
+    display: none; /* Initially hide all sections */
+    width: 440px;
+}
+.section:first-of-type{
+    display: block;
+}
