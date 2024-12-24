@@ -1,68 +1,88 @@
+/* style.css */
 body {
     font-family: sans-serif;
-    background-color: #f0f0f0; /* Light background */
+    background-color: #ffffff;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    min-height: 100vh; /* Ensure full viewport height */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
     margin: 0;
 }
 
-h1 {
-    margin-top: 20px;
-    color: #333;
+.container {
+    background-color: #BAD9A3; 
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; 
+    overflow: hidden; 
+}
+
+header {
+  text-align: center;
+}
+.logo, .other_logo{
+    height: 30px;
+    margin: 5px;
+}
+.waste-image {
+    max-width: 100%;
+    height: auto;
 }
 
 .form-container {
-    background-color: #444444; /* Darker container background */
-    color: #eee; /* Light text color */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 400px; /* Adjust width as needed */
-    margin-top: 20px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    color: #ddd;
+    color: #333;
+    font-weight: 500;
 }
 
 input[type="text"],
 input[type="number"],
-select,
-input[type="file"] {
+input[type="date"],
+select {
     width: calc(100% - 12px);
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     box-sizing: border-box;
-    border: 1px solid #777;
-    background-color: #555;
-    color: #eee;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.next-btn, .prev-btn, .submit-btn {
-    background-color: #007bff; /* Blue button */
-    color: white;
-    padding: 10px 15px;
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer; 
+}
+
+.next-btn,
+.prev-btn,
+.submit-btn {
+    background-color: #4CAF50; 
     border: none;
-    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-right: 10px; /* Space between buttons */
-}
-.prev-btn{
-    background-color: gray;
-}
-.submit-btn{
-    background-color: green;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section {
-    display: none; /* Initially hide all sections */
-    width: 440px;
+    display: none;
 }
 .section:first-of-type{
     display: block;
