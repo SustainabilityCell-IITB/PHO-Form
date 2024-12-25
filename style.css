@@ -1,33 +1,38 @@
-/* style.css */
+
 body {
     font-family: sans-serif;
     background-color: #ffffff;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
 }
 
 .container {
-    background-color: #BAD9A3; 
+    background-color: #BAD9A3;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px; 
-    overflow: hidden; 
+    width: 90%;
+    overflow: hidden;
+    margin: 20px auto;
 }
 
 header {
-  text-align: center;
+    text-align: center;
 }
-.logo, .other_logo{
+
+.logo,
+.other_logo {
     height: 30px;
-    margin: 5px;
+    margin: 10px;
 }
+
 .waste-image {
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .form-container {
@@ -60,13 +65,13 @@ select {
 .checkbox-label {
     display: block;
     margin-bottom: 5px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .next-btn,
 .prev-btn,
 .submit-btn {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -84,6 +89,51 @@ select {
 .section {
     display: none;
 }
-.section:first-of-type{
+
+.section:first-of-type {
     display: block;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        max-width: 70%; 
+        display: flex; 
+        align-items: flex-start; 
+    }
+
+    header {
+        width: 40%; 
+        text-align: center;
+        padding-right: 20px; 
+        box-sizing: border-box;
+    }
+    .waste-image{
+        max-width: 100%;
+    }
+
+    form {
+        width: 60%; 
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+    .form-container{
+        padding: 0;
+    }
+    .logo, .other_logo{
+        height: 50px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+        padding: 12px;
+        font-size: 1.1em;
+    }
+    .next-btn,
+    .prev-btn,
+    .submit-btn {
+        font-size: 1.2em;
+        padding: 12px 24px;
+    }
 }
