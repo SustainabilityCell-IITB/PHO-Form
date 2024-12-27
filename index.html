@@ -21,8 +21,8 @@
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-                    <label for="collection-date">Collection Date</label>
-                    <input type="date" id="collection-date" name="collection-date" required>
+                    <label for="date">Date of entry:</label>
+                    <input type="date" id="date" name="date" required>
 
                     <label>Location:</label>
                     <div class="checkbox-group">
@@ -38,44 +38,34 @@
                     </div>
 
                     <label for="hostel">Hostel No.:</label>
-                    <input type="number" id="hostel" name="hostel">
+                    <select id="hostel" name="hostel">
+                        <option value="">Select Hostel</option>
+                    </select>
+                    
+                    <script>
+                        const hostelSelect = document.getElementById('hostel');
+                        for (let i = 1; i <= 18; i++) {
+                            const option = document.createElement('option');
+                            option.value = i;
+                            option.text = i;
+                            hostelSelect.appendChild(option);
+                        }
+                    </script>
 
-                    <button type="button" class="next-btn" onclick="showSection('peel-waste-section')">NEXT →</button>
+                    <button type="button" class="next-btn" onclick="showSection('waste-info-section')">NEXT →</button>
                 </div>
             </div>
 
-            <div id="peel-waste-section" class="section" style="display: none;">
+            <div id="waste-info-section" class="section" style="display: none;">
                 <div class="form-container">
-                    <h2>Peel Waste</h2>
-                    <label for="peel_weight">Weight (in kg):</label>
+                    <h2>Waste Information</h2>
+                    <label for="peel_weight">Peel Waste (in kg):</label>
                     <input type="number" id="peel_weight" name="peel_weight" min="0" step="0.01" required><br>
-                    <label for="peel_image">Image Proof:</label>
-                    <!-- <input type="file" id="peel_image" name="peel_image" accept="image/*" required><br> -->
-                    <button type="button" class="prev-btn" onclick="showSection('user-info-section')">Previous</button>
-                    <button type="button" class="next-btn" onclick="showSection('leftover-waste-section')">NEXT →</button>
-                </div>
-            </div>
-
-            <div id="leftover-waste-section" class="section" style="display: none;">
-                <div class="form-container">
-                    <h2>Leftover Waste</h2>
-                    <label for="leftover_weight">Weight (in kg):</label>
+                    <label for="leftover_weight">Leftover Waste (in kg):</label>
                     <input type="number" id="leftover_weight" name="leftover_weight" min="0" step="0.01" required><br>
-                    <label for="leftover_image">Image Proof:</label>
-                    <!-- <input type="file" id="leftover_image" name="leftover_image" accept="image/*" required><br> -->
-                    <button type="button" class="prev-btn" onclick="showSection('peel-waste-section')">Previous</button>
-                    <button type="button" class="next-btn" onclick="showSection('dustbin-waste-section')">NEXT →</button>
-                </div>
-            </div>
-
-            <div id="dustbin-waste-section" class="section" style="display: none;">
-                <div class="form-container">
-                    <h2>Dustbin Waste</h2>
-                    <label for="dustbin_weight">Weight (in kg):</label>
+                    <label for="dustbin_weight">Dustbin Waste (in kg):</label>
                     <input type="number" id="dustbin_weight" name="dustbin_weight" min="0" step="0.01" required><br>
-                    <label for="dustbin_image">Image Proof:</label>
-                    <!-- <input type="file" id="dustbin_image" name="dustbin_image" accept="image/*" required><br> -->
-                    <button type="button" class="prev-btn" onclick="showSection('leftover-waste-section')">Previous</button>
+                    <button type="button" class="prev-btn" onclick="showSection('user-info-section')">Previous</button>
                     <input type="submit" value="Submit" class="submit-btn">
                 </div>
             </div>
