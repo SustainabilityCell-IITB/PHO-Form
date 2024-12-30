@@ -37,7 +37,8 @@ imageInput.addEventListener('change', (e)=> {
 // On Form Submit
 
 form.addEventListener('submit', (e)=> {
-    console.log('Submitted')
+
+    alert('Submitting Data. pls do no submit again')
 
     e.preventDefault();
     let formData = new FormData(form)
@@ -50,14 +51,19 @@ form.addEventListener('submit', (e)=> {
     dataPairs['imageProof'] = imageObj
     console.log(dataPairs)
 
-    fetch(url, {
-        method : "POST",
-        body : JSON.stringify(dataPairs)
-    })
-    .then(r => r.text())
-    .then(data => console.log('data uploaded : ', data))
-    
-    console.log('execution ended')
+
+    async function submitData(){
+
+        await fetch(url, {
+            method : "POST",
+            body : JSON.stringify(dataPairs)
+        })
+        .then(r => r.text())
+        .then(data => console.log('data uploaded : ', data))
+    }
+
+    submitData()
+    .then(() => alert('Submitted'))
 
 })
 
