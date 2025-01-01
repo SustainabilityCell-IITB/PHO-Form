@@ -94,6 +94,16 @@ select {
     display: block;
 }
 
+.file-upload-container {
+    margin-bottom: 15px;
+    width: calc(100% - 12px);
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px; 
+    box-sizing: border-box; 
+    background-color: #f8f9fa;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
     .container {
@@ -137,3 +147,5 @@ select {
         padding: 12px 24px;
     }
 }
+
+
