@@ -23,10 +23,15 @@ header {
     text-align: center;
 }
 
-.logo,
-.other_logo {
+.logo{
     height: 30px;
-    margin: 5px;
+}
+
+.title {
+    margin: 0px;
+    font: poppins;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .waste-image {
