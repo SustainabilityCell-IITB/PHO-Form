@@ -23,6 +23,11 @@ header {
     text-align: center;
 }
 
+.form {
+    background-color: #F4FFEB;
+    border-radius: 10px;
+}
+
 .logo{
     height: 30px;
 }
@@ -40,7 +45,7 @@ header {
 }
 
 .form-container {
-    padding: 20px;
+    padding: 15px;
 }
 
 label {
@@ -56,14 +61,14 @@ input[type="date"],
 select {
     width: calc(100% - 12px);
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .checkbox-group {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .checkbox-label {
@@ -78,7 +83,7 @@ select {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 8px 16px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -99,11 +104,11 @@ select {
 }
 
 .file-upload-container {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     width: calc(100% - 12px);
     border: 1px solid #ced4da;
     border-radius: 5px;
-    padding: 10px; 
+    padding: 5px; 
     box-sizing: border-box; 
     background-color: #f8f9fa;
 }
