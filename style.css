@@ -95,6 +95,12 @@ select {
     box-sizing: border-box;
 }
 
+
+.submit-btn:disabled,
+.submit-btn[disabled]{
+    background-color: #4caf4fa3;
+}
+
 .section {
     display: none;
 }

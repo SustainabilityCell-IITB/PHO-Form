@@ -5,6 +5,7 @@ let url = "https://script.google.com/macros/s/AKfycbwH0mEmfWL7rJmzU5ieYGYnxJgGuy
 let form = document.querySelector('form')
 let imageInput = document.querySelector('input[type="file"]')
 
+let submitButton = document.querySelector('.submit-btn')
 
 
 // On image upload
@@ -32,12 +33,14 @@ imageInput.addEventListener('change', (e)=> {
 })
 
 
-
-
 // On Form Submit
 
 form.addEventListener('submit', (e) => {
     e.preventDefault(); 
+
+    submitButton.disabled = true
+    alert("Submitting data. Pls Wait")
+
     let formData = new FormData(form);
     let dataPairs = {};
 
@@ -46,6 +49,7 @@ form.addEventListener('submit', (e) => {
     });
 
     dataPairs['imageProof'] = imageObj;
+    
 
     async function submitData() {
         await fetch(url, {
@@ -57,7 +61,10 @@ form.addEventListener('submit', (e) => {
 
     submitData().then(() => {
         window.location.href = "thank-you.html"; // Redirect to the thank-you page
-    });
+    })
+    .then(() => {
+        console.log("Data Submitted")
+    })
 });
 
 
