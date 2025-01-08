@@ -4,84 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <img src="Logos.webp" alt="Logo" class="logo">
-            <p class="title">WasteTracker</p>
-            <img src="Dustbin.webp" alt="Waste Image" class="waste-image">
-        </header>
-        <!-- 
-        Sheet link :
-        "https://script.google.com/macros/s/AKfycbwH0mEmfWL7rJmzU5ieYGYnxJgGuypdDJpxgUCF6h5RQhcY18o7U9l5b1q-Rt4lBfZX6A/exec" -->
-        <form 
-        action=""
-         
-        method="post" enctype="multipart/form-data" class="form">
-
-            <div id="user-info-section" class="section">
-                <div class="form-container">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-                    <label for="date" >Date of entry:</label>
-                    <input type="date" id="date" name="collection-date" required>
-
-                    <label>Location:</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="location" value="academic"> Academic Area
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="location" value="staff" > Staff Area
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="location" value="hostel"> Hostel Area
-                        </label>
-                    </div>
-
-                    <label for="hostel">Hostel No.:</label>
-                    <select id="hostel" name="hostel" >
-                        <option>Select Hostel</option>
-                    </select>
-                    
-                    <script>
-                        const hostelSelect = document.getElementById('hostel');
-                        for (let i = 1; i <= 18; i++) {
-                            const option = document.createElement('option');
-                            option.value = i;
-                            option.text = i;
-                            hostelSelect.appendChild(option);
-                        }
-                    </script>
-
-                    <button type="button" class="next-btn" onclick="showSection('waste-info-section')">NEXT →</button>
-                </div>
+        <div class="left-section">
+            <header>
+                <img src="Logos.webp" alt="Sustainability Cell Logo" class="logo">
+                <h1><span class="waste">Waste</span><span class="tracker">Tracker</span></h1>
+            </header>
+            <div class="bins">
+                <img src="Dustbin.webp" alt="Bin" class="bin">
             </div>
+        </div>
+<!-- 
+Sheet link :
+"https://script.google.com/macros/s/AKfycbwH0mEmfWL7rJmzU5ieYGYnxJgGuypdDJpxgUCF6h5RQhcY18o7U9l5b1q-Rt4lBfZX6A/exec" -->
+        <div class="right-section">
+            <form action="" method="post" enctype="multipart/form-data" class="form">
+                <div id="user-info-section" class="section"> 
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-            <div id="waste-info-section" class="section" style="display: none;">
-                <div class="form-container">
-                    <label for="peel_weight">Peel Waste (in kg):</label>
-                    <input type="number" id="peel_weight" name="peel_wgt" min="0" step="0.01" required><br>
+                        <label for="date" >Date of entry:</label>
+                        <input type="date" id="date" name="collection-date" required>
 
-                    <label for="leftover_weight">Leftover Waste (in kg):</label>
-                    <input type="number" id="leftover_weight" name="leftover_weight" min="0" step="0.01" required><br>
+                        <label>Location:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="location" value="academic"> Academic Area
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="location" value="staff" > Staff Area
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="location" value="hostel"> Hostel Area
+                            </label>
+                        </div>
 
-                    <label for="dustbin_weight">Dustbin Waste (in kg):</label>
-                    <input type="number" id="dustbin_weight" name="dustbin_weight" min="0" step="0.01" required><br>
+                        <label for="hostel">Hostel No.:</label>
+                        <select id="hostel" name="hostel" >
+                            <option>Select Hostel</option>
+                        </select>
+                        
+                        <script>
+                            const hostelSelect = document.getElementById('hostel');
+                            for (let i = 1; i <= 18; i++) {
+                                const option = document.createElement('option');
+                                option.value = i;
+                                option.text = i;
+                                hostelSelect.appendChild(option);
+                            }
+                        </script>
 
-                    <label for="imageProof">Upload Image</label>
-                    <input type="file" name="imageProof" id="imageProof" accept="image/*" class="file-upload-container">
-
-                    <button type="button" class="prev-btn" onclick="showSection('user-info-section')">Previous</button>
-                    <!-- <input type="submit" value="Submit" class="submit-btn" disabled> -->
-                    <button type="submit" class="submit-btn" >Submit</button>
+                        <button type="button" class="next-btn" onclick="showSection('waste-info-section')">NEXT →</button>
                 </div>
-            </div>
 
-        </form>
+                <div id="waste-info-section" class="section" style="display: none;">
+                        <label for="peel_weight">Peel Waste (in kg):</label>
+                        <input type="number" id="peel_weight" name="peel_wgt" min="0" step="0.01" required><br>
+
+                        <label for="leftover_weight">Leftover Waste (in kg):</label>
+                        <input type="number" id="leftover_weight" name="leftover_weight" min="0" step="0.01" required><br>
+
+                        <label for="dustbin_weight">Dustbin Waste (in kg):</label>
+                        <input type="number" id="dustbin_weight" name="dustbin_weight" min="0" step="0.01" required><br>
+
+                        <label for="imageProof">Upload Image</label>
+                        <input type="file" name="imageProof" id="imageProof" accept="image/*" class="file-upload-container">
+
+                        <button type="button" class="prev-btn" onclick="showSection('user-info-section')">Previous</button>
+                        <input type="submit" value="Submit" class="submit-btn">        
+                </div>
+
+            </form>
+        </div>
     </div>
 
     <script>
