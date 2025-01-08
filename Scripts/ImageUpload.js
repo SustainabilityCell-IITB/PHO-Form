@@ -36,36 +36,30 @@ imageInput.addEventListener('change', (e)=> {
 
 // On Form Submit
 
-form.addEventListener('submit', (e)=> {
-
-    alert('Submitting Data. pls do no submit again')
-
-    e.preventDefault();
-    let formData = new FormData(form)
-    let dataPairs = {}
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+    let formData = new FormData(form);
+    let dataPairs = {};
 
     formData.forEach((value, key) => {
         dataPairs[key] = value;
-    })
+    });
 
-    dataPairs['imageProof'] = imageObj
-    console.log(dataPairs)
+    dataPairs['imageProof'] = imageObj;
 
-
-    async function submitData(){
-
+    async function submitData() {
         await fetch(url, {
-            method : "POST",
-            body : JSON.stringify(dataPairs)
-        })
-        .then(r => r.text())
-        .then(data => console.log('data uploaded : ', data))
+            method: "POST",
+            body: JSON.stringify(dataPairs)
+        }).then((r) => r.text())
+          .then((data) => console.log('Data uploaded:', data));
     }
 
-    submitData()
-    .then(() => alert('Submitted'))
+    submitData().then(() => {
+        window.location.href = "thank-you.html"; // Redirect to the thank-you page
+    });
+});
 
-})
 
 
     //     let spt = res.split("base64,")[1];
