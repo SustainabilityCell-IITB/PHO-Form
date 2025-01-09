@@ -6,6 +6,8 @@ let form = document.querySelector('form')
 let imageInput = document.querySelector('input[type="file"]')
 
 let submitButton = document.querySelector('.submit-btn')
+let loader = document.querySelector('.loader')
+
 
 
 // On image upload
@@ -40,6 +42,9 @@ form.addEventListener('submit', (e) => {
 
     submitButton.disabled = true
     alert("Submitting data. Pls Wait")
+    loader.style.display = 'flex'
+    document.body.firstElementChild.style.opacity = 0.5
+
 
     let formData = new FormData(form);
     let dataPairs = {};
