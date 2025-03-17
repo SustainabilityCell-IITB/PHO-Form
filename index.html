@@ -11,14 +11,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Kaushan+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Keep page in English but translate automatically
+                includedLanguages: 'mr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    
+        function triggerMarathiTranslation() {
+            setTimeout(function () {
+                var select = document.querySelector(".goog-te-combo");
+                if (select) {
+                    select.value = "mr"; // Set Marathi as the selected language
+                    select.dispatchEvent(new Event("change")); // Simulate user selecting Marathi
+                }
+            }, 2000); // Delay to allow Google Translate to load
+        }
+    
+        window.onload = function () {
+            googleTranslateElementInit();
+            triggerMarathiTranslation();
+        };
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    
 </head>
 <body>
     <div class="container">
+        
+
         <div class="left-section">
             <header>
                 <img src="Logos.webp" alt="Sustainability Cell Logo" class="logo">
                 <h1><span class="waste">Waste</span><span class="tracker">Tracker</span></h1>
             </header>
+            <div class="custom-translate">
+            <div id="google_translate_element"></div>
+            </div>
             <div class="bins">
                 <img src="Dustbin.webp" alt="Bin" class="bin">
             </div>
